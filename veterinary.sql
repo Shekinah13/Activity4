@@ -50,3 +50,16 @@ CREATE TABLE invoices
    appointid INT,
         FOREIGN KEY (appointid) REFERENCES appointments(appointid)
 );
+
+CREATE TABLE MedicalRecords 
+(
+    recordid INT PRIMARY KEY,
+    animalid INT,
+    recorddate TIMESTAMP,
+    doctorid INT,
+    diagnosis TEXT,
+    prescription TEXT,
+    notes TEXT,
+		FOREIGN KEY (animalid) REFERENCES Animals(animalid),
+		FOREIGN KEY (doctorid) REFERENCES doctors(doctorid)
+);   
